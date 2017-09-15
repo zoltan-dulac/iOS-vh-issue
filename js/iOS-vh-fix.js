@@ -33,11 +33,19 @@ var iOSvhFix = new function () {
   }
 
   me.init = function () {
-    iosViewportHeightEl = document.querySelector('.iOS-vh-fix--iOS-viewport');
-    realViewportHeightEl = document.querySelector('.iOS-vh-fix--real-viewport');
     styleEl = document.createElement('style');
     styleEl.id = 'iOS-vh-fix-styles';
     document.head.appendChild(styleEl);
+
+    iosViewportHeightEl = document.createElement('div');
+    iosViewportHeightEl.className = 'iOS-vh-fix--iOS-viewport';
+
+    realViewportHeightEl = document.createElement('div');
+    realViewportHeightEl.className = 'iOS-vh-fix--real-viewport';
+    
+    document.body.appendChild(iosViewportHeightEl);
+    document.body.appendChild(realViewportHeightEl);
+
     me.setCSSVariables();
     
     
