@@ -28,12 +28,23 @@
   color: white;
 }
 
-.bottom-iOS-viewport {
-  left: 0;
-  top: calc(100vh - var(--iOS-vh-fix--chrome-height) - 100px);
-}
 
 .bottom-real-viewport {
-  right: 0;
+  left: 0;
+
+  /*
+   * This places the block on the bottom of the viewport (but messes up
+   * when the iOS Safari action bar is on the screen).
+   */
   top: calc(100vh - 100px);
+}
+
+.bottom-iOS-viewport {
+  right: 0;
+
+  /*
+   * This places the block on the bottom of the viewport, even
+   * when the iOS Safari action bar is on the screen.
+   */
+  top: calc(100vh - var(--iOS-vh-fix--chrome-height) - 100px);
 }
